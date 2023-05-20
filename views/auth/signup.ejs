@@ -1,0 +1,54 @@
+
+<%- include('../admin/header.ejs') %>
+ 
+<%- include('../admin/navigation') %>
+
+</head>
+
+<body>
+  
+   <style>
+    main {
+        width: 500px;
+      margin: auto;
+    margin-top: 112px;
+}
+.user-message {
+  margin: auto;
+  width: 90%;
+  border: 1px solid #4771fa;
+  padding: 0.5rem;
+  border-radius: 3px;
+  background: #b9c9ff;
+  text-align: center;
+}
+
+.user-message--error {
+  border-color: red;
+  background: rgb(255, 176, 176);
+  color: red;
+}
+   </style>
+     <main>
+     <% if(errorMessage)  { %> 
+<div  class="user-message user-message--error"><%= errorMessage %></div>
+        <% } %>
+        <form class="login-form" action="/admin/signup" method="POST" novalidate>
+            <div class="form-control">
+                <label for="email">E-Mail</label>
+                <input type="email" name="email" id="email">
+            </div>
+            <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password">
+            </div>
+            <div class="form-control">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" name="confirmPassword" id="confirmPassword">
+            </div>
+            <!-- <input type="hidden" name="_csrf" value="" > -->
+
+            <button class="btn" type="submit">Signup</button>
+        </form>
+    </main>
+    

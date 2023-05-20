@@ -1,0 +1,5 @@
+<form action="<% if( isAuthenticated) { %> /cart <% } %>" method="post">
+  
+    <input type="hidden" name="productId" value="<%= product._id %>">
+    <button class="btn flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail" type="submit">Add to Cart</button>
+</form>
